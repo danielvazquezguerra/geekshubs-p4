@@ -7,7 +7,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 //Configuraciones para express. 
 app.use(bodyParser.json());
@@ -26,4 +26,3 @@ app.get('/', (req,res)=> {
 app.listen(PORT,(req,res)=>{
     console.log(`API REST inicializado en ${PORT}`);
 })
-
