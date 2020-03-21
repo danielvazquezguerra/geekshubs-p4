@@ -26,16 +26,7 @@ Post.belongsTo(Author);
 Author.hasMany(Post);
 
 Post.sync({force: true})
-     .then( () => {
-        Post.bulkCreate(
-            times(30, () => ({
-                title: faker.lorem.sentence(),
-                content: faker.lorem.paragraph(),
-                authorId: random(1, 10)
-            }))
-        )
-    })
-
+   
       .then( ()=>{
           
           Post.create({

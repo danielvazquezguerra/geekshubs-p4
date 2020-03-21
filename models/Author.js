@@ -18,12 +18,7 @@ Author.init(
 
 Author.sync({force: true})
     .then( () => {
-        Author.bulkCreate(
-            times(10, () => ({
-                firstName: faker.name.firstName(),
-                lastName: faker.name.lastName()
-            }))
-        );
+       
     }) 
 
 module.exports = Author;
