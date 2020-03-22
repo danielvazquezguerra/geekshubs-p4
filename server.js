@@ -62,7 +62,6 @@ app.get('/peliculas',(req,res)=>{
 
 app.post('/actores/nuevo',(req,res)=>{
     res.send(`Nuevo actor agregado`);
-    res.send(req.body);
     console.log(req.body);
     Actor.create({
         firstName: req.body.firstName,
@@ -71,10 +70,13 @@ app.post('/actores/nuevo',(req,res)=>{
 })
 
 app.put('/actores/:id',(req,res)=>{
-    let idActor = req.params.id;
+
+    let _id = req.params.id;
     let actorUpdate = req.body;
-    Actor.findOne({where:{id:idActor}})
-    .then(actor =>{
+
+    Actor.findOne({where:{id:_id}})
+
+    .then(actor => {
         actor.update(actorUpdate)
     .then(nuevoActor =>{
         res.json(nuevoActor);
