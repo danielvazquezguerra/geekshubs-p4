@@ -122,6 +122,34 @@ app.post('/peliculas/nuevo',(req,res)=>{
     })
 })
 
+//ENDPOINTS CINES
+
+//POST nuevo cine. 
+app.post('/cines/nuevo',(req,res)=>{
+
+    res.send(`Nuevo cine agregado`);
+    console.log(req.body);
+
+    Cines.create({
+        nombre: req.body.nombre,
+        ciudad: req.body.ciudad,
+        provincia: req.body.provincia,
+        estreno: req.body.estreno,
+    })
+})
+
+
+//busqueda de cine por ciudad.
+app.get('/cines/ciudad/:ciudad', (req,res)=>{
+
+    let _ciudad = req.params.ciudad;
+    Cines.findAll({where:{ciudad:_ciudad}})
+    .then( cines => {
+        res.send(cines);
+    })
+})
+
+
 
 //iniciamos la escucha del servidor. 
 app.listen(PORT,(req,res)=>{

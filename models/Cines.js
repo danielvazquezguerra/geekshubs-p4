@@ -26,7 +26,9 @@ Cines.sync({force: true})
             ciudad: "Valencia",
             provincia: "Valencia",
             estreno: "Bad Boys For Life",
-        })
+        }
+
+      )
        
     }) 
 
