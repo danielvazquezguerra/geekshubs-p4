@@ -1,28 +1,57 @@
 console.log("hola servidor");
 
-const Post = require('./models/Post');
-const Author = require('./models/Author');
+const Pelis = require('./models/Pelis');
+const Actor = require('./models/Actor');
 
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 //Configuraciones para express. 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get('/', (req,res)=> {
-    res.send('Hola Mundo');
-    Post.findAll()
-    .then(posts =>{
-        res.json(posts);
+app.get('/actores', (req,res)=> {
+    
+    Actor.findAll()
+        .then (actores => {
+        
+        res.send(actores);
+        res.sendStatus(200);
     })
+    .catch(()=>{
+        res.sendStatus(400);
+    })
+
 })
 
+app.get('/actores/:id', (req,res)=> {
+    
+    let idActor = req.params.id;
+    Actor.findOne({where: {id:idActor}})
+    .then(actor =>{
+        res.json(actor);
+    })       
+});
 
+app.get('/peliculas',(req,res)=>{
+
+    Pelis.findAll()
+    .then( peliculas => {
+
+        
+        res.send(peliculas);
+        res.sendStatus(200);
+        
+    })
+    .catch(()=>{
+
+        res.sendStatus(400);
+    })
+})
 app.listen(PORT,(req,res)=>{
-    console.log(`API REST inicializado en ${PORT}`);
+    console.log(`El servidor corriendo en el ${PORT}`);
 })
