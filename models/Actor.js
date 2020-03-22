@@ -8,6 +8,7 @@ Actor.init (
     {
         firstName: { type: STRING },
         lastName: { type: STRING },
+        years: { type: STRING},
     },
     {
         sequelize,
@@ -23,6 +24,7 @@ Actor.sync({force: true})
             id: 1,
             firstName : "Will",
             lastName: "Smith",
+            years: "50"
         })
        
     }) 
