@@ -1,12 +1,11 @@
 const sequelize = require('./sequelize');
-const { Model, STRING, NUMBER } = require('sequelize');
+const { Model, STRING } = require('sequelize');
 
 class Actor extends Model {}
 
 Actor.init (
 
     {
-        idActor: { type: NUMBER },
         firstName: { type: STRING },
         lastName: { type: STRING },
     },
@@ -21,7 +20,7 @@ Actor.sync({force: true})
 
         Actor.create({
             
-            idActor: 1,
+            id: 1,
             firstName : "Will",
             lastName: "Smith",
         })
