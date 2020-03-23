@@ -30,6 +30,32 @@ Cines.sync({force: true})
 
       )
        
+    })
+    .then( () => {
+
+        Cines.create({
+            
+            nombre: "Cines LYS",
+            ciudad: "Valencia",
+            provincia: "Valencia",
+            estreno: "Star Wars: La última que salió",
+        }
+
+      )
+       
+    })
+    .then( () => {
+
+        Cines.create({
+            
+            nombre: "Cines ABC",
+            ciudad: "Barcelona",
+            provincia: "Barcelona",
+            estreno: "IT: Chapter Two",
+        }
+
+      )
+       
     }) 
 
 module.exports = Cines;
