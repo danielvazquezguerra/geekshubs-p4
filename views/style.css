@@ -1,0 +1,116 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    color: blue;
+    font-size: 20px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.box {
+
+    display: flex;
+    width: 80%;
+    height: 70%;
+    box-sizing: border-box;
+
+}
+
+.box-left {
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    box-sizing: border-box;
+    border-left: 2px solid black;
+    
+}
+
+.box-left-pelis {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+}
+
+.box-left-actor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    margin-top: 30px;
+}
+
+
+
+.box-right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    box-sizing: border-box;
+ 
+
+}
+
+.p-description {
+    width: 60%;
+    color: blue;
+    font-size: 12px;
+}
+
+
+.botones {
+    width: 90%;
+    height: 70%;
+    margin-top: 20px;
+    border-top: 2px solid blue;
+}
+
+.bt-white {
+    width: auto;
+    font-size: 10px;
+    width: 70%;
+    height: 15px;
+    padding-left: 5px;
+    margin-top: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: blue;
+    border: 0px;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
+    
+}
+
+.bt-blue {
+    width: auto;
+    font-size: 10px;
+    width: 70%;
+    height: 20px;
+    padding-left: 5px;
+    margin-top: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    border: 0px;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
+    
+}

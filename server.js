@@ -43,7 +43,11 @@ app.get('/actores/:id', (req,res)=> {
     Actor.findOne({where: {id:_id}})
     .then(actor =>{
         res.json(actor);
-    })       
+    })
+    .catch(()=>{
+        res.sendStatus(400);
+    })
+       
 });
 
 //busqueda por nombre del actor. 
@@ -54,6 +58,10 @@ app.get('/actores/name/:name', (req,res)=>{
     .then( actor => {
         res.send(actor);
     })
+    .catch(()=>{
+        res.sendStatus(400);
+    })
+
 })
 
 //POST nuevo actor. 
